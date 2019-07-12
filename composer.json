@@ -1,0 +1,5 @@
+{
+    "require": {
+       "shift196/lib-akash": "1.0.*" 
+    }
+}
