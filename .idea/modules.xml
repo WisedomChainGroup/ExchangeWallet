@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PHPSDK.iml" filepath="$PROJECT_DIR$/.idea/PHPSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.sdk.server.iml" filepath="$PROJECT_DIR$/.idea/modules/com.sdk.server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.sdk.server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.sdk.server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.sdk.server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.sdk.server.test.iml" />
     </modules>
   </component>
 </project>
