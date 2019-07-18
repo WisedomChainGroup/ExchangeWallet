@@ -31,7 +31,7 @@ SDK-PHP主要是提供给实现普通转账事务的构造，签名，发送以�
 
 ##### clone当前项目，导入jar运行。
 1.0 生成keystore文件
-
+```
 * fromPassword(GET)
 * 参数：
 * 1）、password(String)
@@ -39,6 +39,7 @@ SDK-PHP主要是提供给实现普通转账事务的构造，签名，发送以�
 * 返回值：
 * {"message":"","data":[],"statusCode":int}
 * data：keystore
+```
 
 1.1 地址校验
 ```
