@@ -30,7 +30,7 @@ SDK-PHP主要是提供给实现普通转账事务的构造，签名，发送以�
 
 ## 二、 JAVA-SDK文档
 
-##### clone当前项目，导入jar运行。
+##### 下载Release，运行server-0.0.1-SNAPSHOT.jar :java -jar server-0.0.1-SNAPSHOT.jar
 1.0 生成keystore文件
 ```
 * fromPassword(GET)
