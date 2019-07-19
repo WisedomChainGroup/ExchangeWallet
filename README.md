@@ -162,7 +162,7 @@ SDK-PHP主要是提供给实现普通转账事务的构造，签名，发送以�
 1.1 获取余额
 ```
 *   方法：sendBalance(POET)   
-*	参数：address(String) 	
+*	参数：pubkeyhash(十六进制字符串) 	
 * 	返回:
 * 	{"message":"","data":[],"statusCode":int}
 *	data:balance(Long)
