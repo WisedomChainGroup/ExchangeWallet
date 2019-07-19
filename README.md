@@ -135,7 +135,7 @@ SDK-PHP主要是提供给实现普通转账事务的构造，签名，发送以�
 * 2）、toPubkeyHash(十六进制字符串)
 * 3）、amount（BigDecimal)
 * 4）、prikey（十六进制字符串)
-* 5）、Nonce(Long)
+* 5）、nonce(Long)
 * 返回类型：Json
 * 返回值：
 * {
