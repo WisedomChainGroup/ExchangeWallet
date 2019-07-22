@@ -160,7 +160,7 @@ SDK-PHP主要是提供给实现普通转账事务的构造，签名，发送以�
 *	参数：pubkeyhash(String)  
 *	返回：
 *	{"message":"","data":[],"statusCode":int}
-*	data:Noce(Long)
+*	data:Nonce(Long)
 ```
 
 1.1 获取余额
