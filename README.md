@@ -31,6 +31,8 @@ SDK-PHP主要是提供给实现普通转账事务的构造，签名，发送以�
 ## 二、 JAVA-SDK文档
 
 ##### 下载Release里最新的sdk-php.rar，运行server-0.0.1-SNAPSHOT.jar :java -jar server-0.0.1-SNAPSHOT.jar --server.port="your port";
+##### 所有的调用均为普通rpc
+##### Content-Type: application/json;charset=UTF-8
 1.0 生成keystore文件
 ```
 * fromPassword(GET)
@@ -148,7 +150,9 @@ SDK-PHP主要是提供给实现普通转账事务的构造，签名，发送以�
 
 ## 三、节点RPC接口
 
-#### 连接节点，ip+端口+调用方法+参数
+##### 连接节点，ip+端口+调用方法+参数
+##### 所有的调用均为普通rpc
+##### Content-Type: application/json;charset=UTF-8
 
 1.0 获取Nonce
 ```
