@@ -275,6 +275,18 @@ SDK-PHP主要是提供给实现普通转账事务的构造，签名，发送以�
 *	String signature; 签名16进制字符串
 *	String to;  接受者公钥哈希16进制字符串
 ```
+1.9  获取节点版本信息
+```
+Function:version
+GET/HTTP/1.1/Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Request URL: http://00.000.0.000:19585/version
+Parameter:
+Demo:
+    GET http://00.000.0.000:19585/version
+Response Body:
+    {"message":"","data":[],"statusCode":int}
+    data:版本信息
+```
 
 ## 四、如何调用
 
