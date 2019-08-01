@@ -1,5 +1,7 @@
 package com.sdk.server.Utils;
 
+import com.alibaba.fastjson.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -40,8 +42,13 @@ public class HttpRequestUtil {
                 result += line;
             }
         } catch (Exception e) {
-            System.out.println("发送 POST 请求出现异常！"+e);
-            e.printStackTrace();
+//            System.out.println("发送 POST 请求出现异常！"+e);
+//            e.printStackTrace();
+            JSONObject jo = new JSONObject();
+            jo.put("message","Connection refused");
+            jo.put("data","");
+            jo.put("code","5000");
+            return jo.toJSONString();
         }
         //使用finally块来关闭输出流、输入流
         finally{
@@ -89,8 +96,13 @@ public class HttpRequestUtil {
                 result += line;
             }
         } catch (Exception e) {
-            System.out.println("发送GET请求出现异常！" + e);
-            e.printStackTrace();
+//            System.out.println("发送GET请求出现异常！" + e);
+//            e.printStackTrace();
+            JSONObject jo = new JSONObject();
+            jo.put("message","Connection refused");
+            jo.put("data","");
+            jo.put("code","5000");
+            return jo.toJSONString();
         }
         // 使用finally块来关闭输入流
         finally {
@@ -106,6 +118,6 @@ public class HttpRequestUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(sendGet("http://120.76.101.153:19585/height",""));
+        System.out.println(sendGet("http://192.168.0.101:19585/height",""));
     }
 }
