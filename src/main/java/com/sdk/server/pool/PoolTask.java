@@ -1,5 +1,7 @@
 package com.sdk.server.pool;
 
+import com.alibaba.fastjson.JSONObject;
+import com.sdk.server.controller.NodeController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -28,18 +30,19 @@ public class PoolTask {
             NonceState nonceState=treeMap.get(firstkey);
             if(nonceState!=null){
                 //判断txhash是否存在
-
+                JSONObject result=NodeController.getTransactionConfirmed(nonceState.getTranHash());
+                int Code=result.getIntValue("code");
+                if(Code==2000){
+                    noncePool.remove(entry.getKey(),firstkey);
+                }else{
+                    noncePool.remove(entry.getKey(),firstkey);
+                    notPool.add(entry.getKey(),nonceState);
+                }
                 //超时
                 long mul=(new Date().getTime() - nonceState.getDatetime()) / (60 * 1000);
                 if(mul>3){
-                    if(nonceState.getRetey()==0){
-                        //重新发送
-
-
-                    }else{
-                        noncePool.remove(entry.getKey(),firstkey);
-                        notPool.add(entry.getKey(),nonceState);
-                    }
+                    noncePool.remove(entry.getKey(),firstkey);
+                    notPool.add(entry.getKey(),nonceState);
                 }
             }
         }
