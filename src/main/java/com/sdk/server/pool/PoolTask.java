@@ -1,6 +1,7 @@
 package com.sdk.server.pool;
 
 import com.alibaba.fastjson.JSONObject;
+import com.company.keystore.wallet.WalletUtility;
 import com.sdk.server.controller.NodeController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,31 +19,31 @@ public class PoolTask {
     @Autowired
     NoncePool noncePool;
 
-    @Autowired
-    NotPool notPool;
-
     @Scheduled(fixedDelay = 30 * 1000)
     public void task(){
         Map<String, TreeMap<Long, NonceState>> noncepool=noncePool.getNoncepool();
         for(Map.Entry<String, TreeMap<Long, NonceState>> entry:noncepool.entrySet()){
             TreeMap<Long, NonceState> treeMap=entry.getValue();
             long firstkey=treeMap.firstKey();
-            NonceState nonceState=treeMap.get(firstkey);
-            if(nonceState!=null){
-                //判断txhash是否存在
-                JSONObject result=NodeController.getTransactionConfirmed(nonceState.getTranHash());
-                int Code=result.getIntValue("code");
-                if(Code==2000){
+            //rpc获取nonce
+            JSONObject getnonoce=NodeController.getNonce(WalletUtility.addressToPubkeyHash(entry.getKey()));
+            int Codes= (int) getnonoce.get("code");
+            if(Codes==2000){
+                long nownonce=(long) getnonoce.get("data");
+                if(nownonce>=firstkey){
                     noncePool.remove(entry.getKey(),firstkey);
+                    continue;
+                }
+                NonceState nonceState=treeMap.get(firstkey);
+                if(nonceState!=null){
+                    //判断txhash是否存在
+                    JSONObject result=NodeController.getTransactionConfirmed(nonceState.getTranHash());
+                    int Code=result.getIntValue("code");
+                    if(Code==2000){
+                        noncePool.remove(entry.getKey(),firstkey);
+                    }
                 }else{
                     noncePool.remove(entry.getKey(),firstkey);
-                    notPool.add(entry.getKey(),nonceState);
-                }
-                //超时
-                long mul=(new Date().getTime() - nonceState.getDatetime()) / (60 * 1000);
-                if(mul>3){
-                    noncePool.remove(entry.getKey(),firstkey);
-                    notPool.add(entry.getKey(),nonceState);
                 }
             }
         }
