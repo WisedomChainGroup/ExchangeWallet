@@ -1,0 +1,51 @@
+/*
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'java'
+}
+*/
+//apply plugin: 'io.spring.dependency-management'
+apply plugin: 'application'
+
+group = 'com.sdk'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+mainClassName = 'com.sdk.server.ServerApplication'
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web:2.1.6.RELEASE'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compile fileTree(dir:'lib',includes:['*jar'])
+}
+
+task copyDependencies(type: Copy) {
+    from configurations.runtime
+    destinationDir = file('build/libs/lib')
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class' : mainClassName
+        attributes 'Class-Path' : '. ' + configurations.compile.collect { 'lib/' + it.getName() }.join(' ')
+    }
+}
+jar.dependsOn += copyDependencies
+
+task fatJar(type: Jar) {
+    classifier = 'all'
+    manifest {
+        attributes 'Main-Class' : mainClassName
+        attributes 'Class-Path' : configurations.compile.collect { 'lib/' + it.getName() }.join(' ')
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
