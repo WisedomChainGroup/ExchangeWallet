@@ -1,6 +1,7 @@
 package com.sdk.server.Utils;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sdk.server.Leveldb.Leveldb;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -117,7 +118,8 @@ public class HttpRequestUtil {
         return result;
     }
 
-    public static void main(String[] args) {
-        System.out.println(sendGet("http://192.168.0.101:19585/height",""));
+    public static void main(String[] args) throws IOException {
+
+
     }
 }
