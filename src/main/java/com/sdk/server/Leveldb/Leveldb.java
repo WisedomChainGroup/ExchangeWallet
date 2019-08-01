@@ -33,14 +33,12 @@ public class Leveldb {
 
 
 
-    public void addPoolDb(String noncepoolval, String notpool) throws IOException {
+    public void addPoolDb(String noncepoolval) throws IOException {
         try {
 
             byte[] keyByte = "noncepool".getBytes(CHARSET);
-            byte[] keyByte2 = "notpool".getBytes(CHARSET);
             // 会写入磁盘中
             this.db.put(keyByte, noncepoolval.getBytes(CHARSET));
-            this.db.put(keyByte2, notpool.getBytes(CHARSET));
         }catch (Exception e){
             e.printStackTrace();
         }finally {
@@ -55,9 +53,8 @@ public class Leveldb {
         }
     }
 
-    public String readFromSnapshot(Integer type){
+    public String readFromSnapshot(){
         String noncepool = "";
-        String notpool = "";
         try {
             // 读取当前快照，重启服务仍能读取，说明快照持久化至磁盘，
             Snapshot snapshot = this.db.getSnapshot();
@@ -74,11 +71,9 @@ public class Leveldb {
                         .next();
                 String key = new String(entry.getKey(), CHARSET);
                 String value = new String(entry.getValue(), CHARSET);
-                System.out.println("key: " + key + " value: " + value);
+//                System.out.println("key: " + key + " value: " + value);
                 if(key.equals("noncepool")){
                     noncepool = value;
-                }else if(key.equals("notpool")){
-                    notpool = value;
                 }
             }
         } catch (Exception e) {
@@ -94,11 +89,7 @@ public class Leveldb {
                 }
             }
         }
-        if(type == 1){
-            return noncepool;
-        }else{
-            return notpool;
-        }
+        return noncepool;
     }
 
 }
