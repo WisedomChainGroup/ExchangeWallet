@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="server:jar" />
+      <artifact name="com.sdk.server.main:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -17,6 +17,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/server$All_in_com_sdk_server.ic" NAME="All in com.sdk.server Coverage Results" MODIFIED="1563512517827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -25,7 +28,38 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="server" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="server" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="server" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="test" type="396b929e:GradleViewContributor$SourceSetNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="server" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="test" type="396b929e:GradleViewContributor$SourceSetNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -37,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/ServerApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="171">
               <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -49,19 +83,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/controller/test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/controller/WalletController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="50" column="34" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="34" />
+            <state relative-caret-position="342">
+              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,10 +95,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/wcli.jar!/com/company/keystore/wallet/WalletUtility.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/controller/TxController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="475">
+              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,8 +135,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/ApiResult/APIResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3">
-              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state relative-caret-position="152">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -93,26 +144,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/ApiResult/ResultSupport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../wcli/out/artifacts/wcli_jar_fusion__/wcli.jar!/com/company/keystore/wallet/WalletUtility.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="154" column="28" selection-start-line="152" selection-start-column="15" selection-end-line="154" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="17" selection-end-column="74" />
+            <state relative-caret-position="152">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -145,15 +178,14 @@
       <find>ClientToTransferAccount</find>
       <find>keystoreToAddress</find>
       <find>Success</find>
-      <find>Clienttotransferaccount</find>
       <find>keystoreToPubkey</find>
       <find>verifyAddress</find>
       <find>7000</find>
       <find>12</find>
+      <find>Clienttotransferaccount</find>
+      <find>from</find>
+      <find>lib</find>
     </findStrings>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response171.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -162,80 +194,34 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sdk/server/keystore/wallet/Crypto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sdk/server/keystore/crypto/ed25519/Ed25519DsaSigner.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sdk/server/controller/Hello.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sdk/server/ServerApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sdk/company/controller/TxController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sdk/server/ApiResult/ResultSupport.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sdk/server/controller/test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sdk/server/ApiResult/APIResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sdk/server/controller/TxController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sdk/server/ServerApplication.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/sdk/server/controller/WalletController.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-5" />
-    <option name="y" value="3" />
-    <option name="width" value="1935" />
-    <option name="height" value="1053" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="y" value="10" />
+    <option name="width" value="1936" />
+    <option name="height" value="1037" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="sdk" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="sdk" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
@@ -246,6 +232,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,8 +241,8 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563329998133" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wcli/out/artifacts/wcli_jar/wcli.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563898003055" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -264,7 +251,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\server" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\server\src\main\java\com\sdk\server\lib" />
       <recent name="D:\project\server\src\main\java\com\sdk\server" />
     </key>
   </component>
@@ -272,14 +263,390 @@
     <option name="REQUEST_HISTORY">
       <list>
         <RestClientRequest>
-          <option name="httpMethod" value="GET" />
+          <option name="httpMethod" value="POST" />
           <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/verifyAddress" />
+          <option name="urlPath" value="/ClientToTransferAccount" />
           <option name="parameters">
             <list>
               <KeyValuePair>
-                <option name="key" value="address" />
-                <option name="value" value="a" />
+                <option name="key" value="fromPubkey" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a00" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="toPubkeyHash" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a00" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="amount" />
+                <option name="value" value="1.01" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="prikey" />
+                <option name="value" value="f0d55ae8a79186e8595514fe23dec8716a191d2bb525998298371693dc69a92612" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="nonce" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/ClientToTransferAccount" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="fromPubkey" />
+                <option name="value" value="5b7514a3d3337022cfaf9619b8d7dc8c5fbbb3c3d942ded3ee240248c0550ad811" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="toPubkeyHash" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a00" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="amount" />
+                <option name="value" value="1.01" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="prikey" />
+                <option name="value" value="f0d55ae8a79186e8595514fe23dec8716a191d2bb525998298371693dc69a92612" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="nonce" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/ClientToTransferAccount" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="fromPubkey" />
+                <option name="value" value="5b7514a3d3337022cfaf9619b8d7dc8c5fbbb3c3d942ded3ee240248c0550ad811" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="toPubkeyHash" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a0011" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="amount" />
+                <option name="value" value="1.01" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="prikey" />
+                <option name="value" value="f0d55ae8a79186e8595514fe23dec8716a191d2bb525998298371693dc69a92612" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="nonce" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/ClientToTransferAccount" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="fromPubkey" />
+                <option name="value" value="5b7514a3d3337022cfaf9619b8d7dc8c5fbbb3c3d942ded3ee240248c0550ad8" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="toPubkeyHash" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a00" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="amount" />
+                <option name="value" value="1.01" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="prikey" />
+                <option name="value" value="f0d55ae8a79186e8595514fe23dec8716a191d2bb525998298371693dc69a92612" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="nonce" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/ClientToTransferAccount" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="fromPubkey" />
+                <option name="value" value="5b7514a3d3337022cfaf9619b8d7dc8c5fbbb3c3d942ded3ee240248c0550ad8" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="toPubkeyHash" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a00" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="amount" />
+                <option name="value" value="1.01" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="prikey" />
+                <option name="value" value="f0d55ae8a79186e8595514fe23dec8716a191d2bb525998298371693dc69a926" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="nonce" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/ClientToTransferAccount" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="fromPubkey" />
+                <option name="value" value="5b7514a3d3337022cfaf9619b8d7dc8c5fbbb3c3d942ded3ee240248c0550ad8" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="toPubkeyHash" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="amount" />
+                <option name="value" value="1.01" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="prikey" />
+                <option name="value" value="f0d55ae8a79186e8595514fe23dec8716a191d2bb525998298371693dc69a926" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="nonce" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/ClientToTransferAccount" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="fromPubkey" />
+                <option name="value" value="5b7514a3d3337022cfaf9619b8d7dc8c5fbbb3c3d942ded3ee240248c0550ad8" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="toPubkeyHash" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a10" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="amount" />
+                <option name="value" value="1.01" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="prikey" />
+                <option name="value" value="f0d55ae8a79186e8595514fe23dec8716a191d2bb525998298371693dc69a926" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="nonce" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/ClientToTransferAccount" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="fromPubkey" />
+                <option name="value" value="5b7514a3d3337022cfaf9619b8d7dc8c5fbbb3c3d942ded3ee240248c0550ad8" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="toPubkeyHash" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a10" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="amount" />
+                <option name="value" value="1.01" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="prikey" />
+                <option name="value" value="f0d55ae8a79186e8595514fe23dec8716a191d2bb525998298371693dc69a926" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/ClientToTransferAccount" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="fromPubkey" />
+                <option name="value" value="5b7514a3d3337022cfaf9619b8d7dc8c5fbbb3c3d942ded3ee240248c0550ad8" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="toPubkeyHash" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a10" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="amount" />
+                <option name="value" value="1.01" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="prikey" />
+                <option name="value" value="f0d55ae8a79186e8595514fe23dec8716a191d2bb525998298371693dc69a926" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="nonce" />
+                <option name="value" value="0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/ClientToTransferAccount" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="fromPubkey" />
+                <option name="value" value="5b7514a3d3337022cfaf9619b8d7dc8c5fbbb3c3d942ded3ee240248c0550ad8" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="toPubkeyHash" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a10" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="amount" />
+                <option name="value" value="1.01" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="prikey" />
+                <option name="value" value="f0d55ae8a79186e8595514fe23dec8716a191d2bb525998298371693dc69a926" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="nonce" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="ClientToTransferAccount" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="fromPubkey" />
+                <option name="value" value="5b7514a3d3337022cfaf9619b8d7dc8c5fbbb3c3d942ded3ee240248c0550ad8" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="toPubkeyHash" />
+                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a10" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="amount" />
+                <option name="value" value="1.01" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="prikey" />
+                <option name="value" value="f0d55ae8a79186e8595514fe23dec8716a191d2bb525998298371693dc69a926" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="fromPassword" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="password" />
+                <option name="value" value="12345678" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="fromPassword" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="password" />
+                <option name="value" value="123456" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="fromPassword" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="fromPassword" />
+                <option name="value" value="123456" />
               </KeyValuePair>
             </list>
           </option>
@@ -296,6 +663,22 @@
               <KeyValuePair>
                 <option name="key" value="address" />
                 <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/verifyAddress" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="address" />
+                <option name="value" value="a" />
               </KeyValuePair>
             </list>
           </option>
@@ -1019,262 +1402,6 @@
           <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/addressToPubkeyHash" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="address" />
-                <option name="value" value="1PxgikfZGWW1L3eFJWpBrowjX5omFiy9" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/pubkeyHashToAddress" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="pubkeyHash" />
-                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a1" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/pubkeyHashToAddress" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="pubkeyHash" />
-                <option name="value" value="fbdacd374729b74c594cf955dc207fbb1d203a10" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/pubkeyHashToAddress" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="pubkeyHash" />
-                <option name="value" value="7e44ffe73e7885ae49f69d442109a1c54d825ed4" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/verifyAddress" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="address" />
-                <option name="value" value="12KMR7JZBy9SqnKjnA3a1P656gN7k3T63C" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/verifyAddress" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="address" />
-                <option name="value" value="1233231" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/verifyAddress" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="address" />
-                <option name="value" value="" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/modifyPassword" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="keystoreJson" />
-                <option name="value" value="{&quot;data&quot;:{&quot;address&quot;:&quot;12KMR7JZBy9SqnKjnA3a1P656gN7k3T63C&quot;,&quot;kdfparams&quot;:{&quot;salt&quot;:&quot;48fc51cb61b89d89ca176dad6422e47f3997e5bd89b9fffbe130dade9502c6f0&quot;,&quot;memoryCost&quot;:20480,&quot;parallelism&quot;:2,&quot;timeCost&quot;:4},&quot;id&quot;:&quot;9624f3ab-872d-4f91-a069-8df0913d1caa&quot;,&quot;kdf&quot;:&quot;argon2id&quot;,&quot;version&quot;:&quot;1&quot;,&quot;mac&quot;:&quot;3da29444b97d3568a606c3edbf50e03ce045daaa80d213bbe899c9ba37d08ec9&quot;,&quot;crypto&quot;:{&quot;cipher&quot;:&quot;aes-256-ctr&quot;,&quot;ciphertext&quot;:&quot;ccaf6e8623a53b743ee95f6dc96ac8389f81d1179ce56b54626c0793fdf739da&quot;,&quot;cipherparams&quot;:{&quot;iv&quot;:&quot;64e7d2103c778f1870fb6cef79bde38b&quot;}}},&quot;message&quot;:&quot;Success&quot;,&quot;statusCode&quot;:0}" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="password" />
-                <option name="value" value="11111111" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="newPassword" />
-                <option name="value" value="12345678" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/modifyPassword" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="keystoreJson" />
-                <option name="value" value="{&quot;address&quot;:&quot;12KMR7JZBy9SqnKjnA3a1P656gN7k3T63C&quot;,&quot;kdfparams&quot;:{&quot;salt&quot;:&quot;45c0cdcb07f764ebedd099f92dc7cbc0b37e45d23ca21bdbbcc25342fcc5220c&quot;,&quot;memoryCost&quot;:20480,&quot;parallelism&quot;:2,&quot;timeCost&quot;:4},&quot;id&quot;:&quot;96ca2ed1-6eee-4e89-b5f3-8e7519074c66&quot;,&quot;kdf&quot;:&quot;argon2id&quot;,&quot;version&quot;:&quot;1&quot;,&quot;mac&quot;:&quot;35e6f30be50b13663d2e32bffa2c6dc5f2608b958c9155ab619eddd6af613202&quot;,&quot;crypto&quot;:{&quot;cipher&quot;:&quot;aes-256-ctr&quot;,&quot;ciphertext&quot;:&quot;2c56d68fd39ffc8da5ab3e6aa877a75a66e059b831851d75e6e4722893419e38&quot;,&quot;cipherparams&quot;:{&quot;iv&quot;:&quot;576f75c225720436ef06491c22f66fd3&quot;}}}" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="password" />
-                <option name="value" value="11111111" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="newPassword" />
-                <option name="value" value="12345678" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/modifyPassword" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="keystoreJson" />
-                <option name="value" value="{&quot;address&quot;:&quot;12KMR7JZBy9SqnKjnA3a1P656gN7k3T63C&quot;,&quot;kdfparams&quot;:{&quot;salt&quot;:&quot;45c0cdcb07f764ebedd099f92dc7cbc0b37e45d23ca21bdbbcc25342fcc5220c&quot;,&quot;memoryCost&quot;:20480,&quot;parallelism&quot;:2,&quot;timeCost&quot;:4},&quot;id&quot;:&quot;96ca2ed1-6eee-4e89-b5f3-8e7519074c66&quot;,&quot;kdf&quot;:&quot;argon2id&quot;,&quot;version&quot;:&quot;1&quot;,&quot;mac&quot;:&quot;35e6f30be50b13663d2e32bffa2c6dc5f2608b958c9155ab619eddd6af613202&quot;,&quot;crypto&quot;:{&quot;cipher&quot;:&quot;aes-256-ctr&quot;,&quot;ciphertext&quot;:&quot;2c56d68fd39ffc8da5ab3e6aa877a75a66e059b831851d75e6e4722893419e38&quot;,&quot;cipherparams&quot;:{&quot;iv&quot;:&quot;576f75c225720436ef06491c22f66fd3&quot;}}}" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="password" />
-                <option name="value" value="1" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="newPassword" />
-                <option name="value" value="12345678" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/modifyPassword" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="keystoreJson" />
-                <option name="value" value="1" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="password" />
-                <option name="value" value="1" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="newPassword" />
-                <option name="value" value="2" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/fromPassword" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="password" />
-                <option name="value" value="1" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/fromPassword" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="password" />
-                <option name="value" value="12345678" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/fromPassword" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="fromPassword" />
-                <option name="value" value="12345678" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
       </list>
     </option>
   </component>
@@ -1304,6 +1431,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="server [fatJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="fatJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="server [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="All in com.sdk.server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.sdk.server" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="com.sdk.server.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sdk.server.ServerApplication" />
@@ -1313,6 +1486,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.server [jar]" />
+        <item itemvalue="Gradle.server [fatJar]" />
+        <item itemvalue="JUnit.All in com.sdk.server" />
         <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
@@ -1334,12 +1510,15 @@
       <workItem from="1563248540474" duration="167000" />
       <workItem from="1563248733570" duration="749000" />
       <workItem from="1563249507431" duration="4291000" />
-      <workItem from="1563258054506" duration="14627000" />
+      <workItem from="1563258054506" duration="23700000" />
+      <workItem from="1563508402632" duration="2264000" />
+      <workItem from="1563511846615" duration="13511000" />
+      <workItem from="1564630068886" duration="717000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44224000" />
+    <option name="totallyTimeSpent" value="69789000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1351,9 +1530,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="3" width="1935" height="1053" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918962" visible="true" weight="0.2688" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918962" visible="true" weight="0.27345416" />
       <window_info id="Structure" order="1" sideWeight="0.5008104" side_tool="true" weight="0.2608" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1363,28 +1543,28 @@
       <window_info id="Web" order="7" sideWeight="0.5008104" side_tool="true" weight="0.2608" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36956522" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36944744" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32934782" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.38152173" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.38136512" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32934782" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32934782" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32827735" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.32934782" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32934782" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32934782" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32827735" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
       <window_info anchor="bottom" id="Version Control" order="15" />
-      <window_info anchor="bottom" id="REST Client" order="16" sideWeight="0.49946696" visible="true" weight="0.32934782" />
+      <window_info active="true" anchor="bottom" id="REST Client" order="16" sideWeight="0.49946696" visible="true" weight="0.32827735" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" />
+      <window_info anchor="right" id="Gradle" order="6" visible="true" weight="0.09594883" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -1403,6 +1583,12 @@
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sdk/server/controller/WalletController.java</url>
+          <line>16</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -1412,13 +1598,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/keystore/wallet/Crypto.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/keystore/crypto/ed25519/Ed25519DsaSigner.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/keystore/crypto/ed25519/ECDH.java" />
-    <entry file="jar://$PROJECT_DIR$/../wcli/out/artifacts/wcli_jar_fusion__/wcli.jar!/com/company/keystore/wallet/TxUtility.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="185" column="29" selection-start-line="185" selection-start-column="29" selection-end-line="185" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/../wcli/out/artifacts/wcli_jar_fusion__/wcli.jar!/com/company/keystore/wallet/TxUtility.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/controller/Hello.java" />
     <entry file="jar://$PROJECT_DIR$/../rpcsdk-J/out/artifacts/wcli_jar/wcli.jar!/com/company/keystore/wallet/WalletUtility.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1437,27 +1617,7 @@
     <entry file="file://$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/ApiResult/ResultSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="17" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../wcli/out/artifacts/wcli_jar_fusion_/wcli.jar!/com/company/keystore/wallet/WalletUtility.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="176" column="25" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/../wcli/out/artifacts/wcli_jar_fusion_/wcli.jar!/com/company/keystore/wallet/WalletUtility.class" />
     <entry file="jar://$PROJECT_DIR$/../wcli/out/artifacts/wcli_jar/wcli.jar!/com/company/keystore/crypto/ed25519/Ed25519PrivateKey.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -1472,30 +1632,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../wcli/out/artifacts/wcli_jar_fusion__/wcli.jar!/com/company/keystore/wallet/WalletUtility.class">
+    <entry file="jar://$PROJECT_DIR$/../wcli/out/artifacts/wcli_jar_fusion__/wcli.jar!/com/company/keystore/wallet/WalletUtility.class" />
+    <entry file="jar://$PROJECT_DIR$/../wcli/out/artifacts/wcli_jar/wcli.jar!/com/company/keystore/wallet/WalletUtility.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="154" column="28" selection-start-line="152" selection-start-column="15" selection-end-line="154" selection-end-column="28" />
+        <state relative-caret-position="452">
+          <caret line="267" column="22" selection-start-line="267" selection-start-column="22" selection-end-line="267" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/ApiResult/APIResult.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/controller/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="19">
+          <caret line="1" column="44" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/controller/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/gradlew">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/ServerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="171">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1505,29 +1663,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/controller/TxController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/controller/WalletController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        <state relative-caret-position="342">
+          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../wcli/out/artifacts/wcli_jar/wcli.jar!/com/company/keystore/wallet/WalletUtility.class">
+    <entry file="jar://$PROJECT_DIR$/lib/wcli.jar!/com/company/keystore/wallet/WalletUtility.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="267" column="22" selection-start-line="267" selection-start-column="22" selection-end-line="267" selection-end-column="22" />
+        <state relative-caret-position="551">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/controller/WalletController.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/ApiResult/APIResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="50" column="34" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="34" />
+        <state relative-caret-position="152">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/ApiResult/ResultSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sdk/server/controller/TxController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1538,12 +1723,11 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>server:jar</last-edited>
+          <last-edited>com.sdk.server.main:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
