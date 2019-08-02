@@ -2,10 +2,14 @@ package com.sdk.server.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sdk.server.Utils.HttpRequestUtil;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class NodeController {
-    //    public static final String ip = "http://120.76.101.153:19585/";
-    public static final String ip = "http://192.168.0.101:19585/";
+
+    @Value("${nodeNet}")
+    private String ip;
 
 
     /**
@@ -13,8 +17,8 @@ public class NodeController {
      * @param pubkeyhash
      * @return
      */
-    public static JSONObject getNonce(String pubkeyhash){
-        String url = ip+"sendNonce";
+    public JSONObject getNonce(String pubkeyhash){
+        String url = "http://"+ip+"/sendNonce";
         String param = "pubkeyhash="+pubkeyhash;
         String result = HttpRequestUtil.sendPost(url,param);
         JSONObject jo = JSONObject.parseObject(result);
@@ -26,8 +30,8 @@ public class NodeController {
      * @param txHash
      * @return
      */
-    public static JSONObject getTransactionConfirmed(String txHash){
-        String url = ip+"transactionConfirmed";
+    public JSONObject getTransactionConfirmed(String txHash){
+        String url = "http://"+ip+"/transactionConfirmed";
         String param = "txHash="+txHash;
         String result = HttpRequestUtil.sendGet(url,param);
         JSONObject jo = JSONObject.parseObject(result);
@@ -39,8 +43,8 @@ public class NodeController {
      * @param traninfo
      * @return
      */
-    public static JSONObject sendTransaction(String traninfo){
-        String url = ip+"sendTransaction";
+    public JSONObject sendTransaction(String traninfo){
+        String url = "http://"+ip+"/sendTransaction";
         String param = "traninfo="+traninfo;
         String result = HttpRequestUtil.sendPost(url,param);
         JSONObject jo = JSONObject.parseObject(result);

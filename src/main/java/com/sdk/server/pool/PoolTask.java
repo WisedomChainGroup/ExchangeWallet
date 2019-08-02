@@ -18,20 +18,22 @@ import java.util.TreeMap;
 public class PoolTask {
 
     public NoncePool noncePool;
+    public NodeController nodeController;
 
     @Autowired
-    public PoolTask(NoncePool noncePool){
+    public PoolTask(NoncePool noncePool,NodeController nodeController){
         this.noncePool=noncePool;
+        this.nodeController= nodeController;
     }
 
-    @Scheduled(fixedDelay = 30 * 1000)
+    @Scheduled(fixedDelay = 10 * 1000)
     public void task() throws IOException {
         Map<String, TreeMap<Long, NonceState>> noncepool=noncePool.getNoncepool();
         for(Map.Entry<String, TreeMap<Long, NonceState>> entry:noncepool.entrySet()){
             TreeMap<Long, NonceState> treeMap=entry.getValue();
             long firstkey=treeMap.firstKey();
             //rpc获取nonce
-            JSONObject getnonoce=NodeController.getNonce(WalletUtility.addressToPubkeyHash(entry.getKey()));
+            JSONObject getnonoce=nodeController.getNonce(WalletUtility.addressToPubkeyHash(entry.getKey()));
             int Codes= getnonoce.getIntValue("code");
             if(Codes==2000){
                 long nownonce= getnonoce.getLongValue("data");
@@ -42,7 +44,7 @@ public class PoolTask {
                 NonceState nonceState=treeMap.get(firstkey);
                 if(nonceState!=null){
                     //判断txhash是否存在
-                    JSONObject result=NodeController.getTransactionConfirmed(nonceState.getTranHash());
+                    JSONObject result=nodeController.getTransactionConfirmed(nonceState.getTranHash());
                     int Code=result.getIntValue("code");
                     if(Code==2000){
                         noncePool.remove(entry.getKey(),firstkey);

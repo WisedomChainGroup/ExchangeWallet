@@ -24,6 +24,9 @@ public class TxController {
     @Autowired
     NoncePool noncePool;
 
+    @Autowired
+    NodeController nodeController;
+
     @RequestMapping(value="/ClientToTransferAccount",method = RequestMethod.POST )
     public JSON ClientToTransferAccount(@RequestParam(value = "fromPubkey", required = true) String fromPubkey,@RequestParam(value = "toPubkeyHash", required = true) String toPubkeyHash,
                                         @RequestParam(value = "amount", required = true) BigDecimal amount,@RequestParam(value = "prikey", required = true) String prikey
@@ -42,7 +45,7 @@ public class TxController {
         long maxnonce=noncePool.getMaxNonce(address);
         if(maxnonce==0){
             //rpc获取nonce
-            JSONObject getnonoce=NodeController.getNonce(frompubhash);
+            JSONObject getnonoce=nodeController.getNonce(frompubhash);
             int Code= getnonoce.getIntValue("code");
             if(Code==5000){
                 APIResult result = new APIResult();
