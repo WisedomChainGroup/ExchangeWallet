@@ -2,10 +2,13 @@ package com.sdk.server.pool;
 
 import com.alibaba.fastjson.JSON;
 import com.sdk.server.Leveldb.Leveldb;
+import com.sdk.server.Utils.BeanToMapUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -19,12 +22,23 @@ public class NoncePool {
     public NoncePool(Leveldb leveldb) {
         this.leveldb=leveldb;
         try{
+            this.noncepool = new ConcurrentHashMap<>();
             //序列化获取
             String dbdata=leveldb.readFromSnapshot();
             if(dbdata!=null && !dbdata.equals("")){
-                noncepool= (ConcurrentHashMap<String, TreeMap<Long, NonceState>>) JSON.parse(dbdata);
-            }else{
-                this.noncepool = new ConcurrentHashMap<>();
+                Map<String, Map<Integer, NonceState>> maps= JSON.parseObject(dbdata,HashMap.class);
+                for(Map.Entry<String, Map<Integer, NonceState>> entry:maps.entrySet()){
+                    String key=entry.getKey();
+                    Map<Integer, NonceState> map=entry.getValue();
+                    TreeMap<Long, NonceState> treemap=new TreeMap<>();
+                    for(Map.Entry<Integer, NonceState> entry1:map.entrySet()){
+                        int treekey=entry1.getKey();
+                        long key2=treekey;
+                        NonceState nonceState= (NonceState) BeanToMapUtil.convertMap(NonceState.class, (Map) entry1.getValue());
+                        treemap.put(key2,nonceState);
+                    }
+                    noncepool.put(key,treemap);
+                }
             }
         }catch (Exception e){
             this.noncepool = new ConcurrentHashMap<>();
@@ -81,8 +95,8 @@ public class NoncePool {
         return 0;
     }
 
-    public TreeMap<Long, NonceState> getTreemap(String address){
-        if(noncepool.containsKey(address)){
+    public TreeMap<Long, NonceState> getTreemap(String address) {
+        if (noncepool.containsKey(address)) {
             return noncepool.get(address);
         }
         return new TreeMap<>();
