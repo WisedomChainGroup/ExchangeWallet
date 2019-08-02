@@ -17,25 +17,16 @@ public class Leveldb {
     private DB db = null;
     private static final Charset CHARSET = Charset.forName("utf-8");
     private static final String path = System.getProperty("user.dir")+File.separator+"leveldb";
-
-    @PostConstruct
-    public void Leveldb() {
-        DBFactory factory = new Iq80DBFactory();
-        Options options = new Options();
-        options.createIfMissing(true);
-        File file = new File(path);
-        try {
-            this.db = factory.open(file, options);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    private static final File file = new File(path);
+    private static final Options options =new Options();
 
 
 
     public void addPoolDb(String noncepoolval) throws IOException {
         try {
-
+            DBFactory factory = new Iq80DBFactory();
+            options.createIfMissing(true);
+            this.db = factory.open(file, options);
             byte[] keyByte = "noncepool".getBytes(CHARSET);
             // 会写入磁盘中
             this.db.put(keyByte, noncepoolval.getBytes(CHARSET));
@@ -53,7 +44,10 @@ public class Leveldb {
         }
     }
 
-    public String readFromSnapshot(){
+    public String readFromSnapshot() throws IOException {
+        DBFactory factory = new Iq80DBFactory();
+        options.createIfMissing(true);
+        this.db = factory.open(file, options);
         String noncepool = "";
         try {
             // 读取当前快照，重启服务仍能读取，说明快照持久化至磁盘，
