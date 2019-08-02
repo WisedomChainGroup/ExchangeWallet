@@ -1,9 +1,8 @@
 package com.sdk.server.pool;
 
+import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Component;
 
-import java.util.Comparator;
-import java.util.Date;
 import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -13,7 +12,17 @@ public class NoncePool {
     private ConcurrentHashMap<String, TreeMap<Long, NonceState>> noncepool;
 
     public NoncePool() {
-        this.noncepool = new ConcurrentHashMap<>();
+        try{
+            //序列化获取
+            String dbdata=null;
+            if(dbdata!=null || !dbdata.equals("")){
+                noncepool= (ConcurrentHashMap<String, TreeMap<Long, NonceState>>) JSON.parse(dbdata);
+            }else{
+                this.noncepool = new ConcurrentHashMap<>();
+            }
+        }catch (Exception e){
+            this.noncepool = new ConcurrentHashMap<>();
+        }
     }
 
     public ConcurrentHashMap<String, TreeMap<Long, NonceState>> getNoncepool() {
@@ -32,21 +41,8 @@ public class NoncePool {
             treemap.put(nonceState.getNonce(),nonceState);
             noncepool.put(address,treemap);
         }
-    }
+        String json = JSON.toJSONString(noncepool,true);
 
-    public void updatertey(String address,long nonce){
-        if(noncepool.containsKey(address)){
-            TreeMap<Long, NonceState> tmaps=noncepool.get(address);
-            if(tmaps.containsKey(nonce)){
-                NonceState nonceState=tmaps.get(nonce);
-                if(nonceState.getDatetime()==0){
-                    nonceState.setDatetime(new Date().getTime());
-                    nonceState.setDatetime(1);
-                    tmaps.put(nonce,nonceState);
-                    noncepool.put(address,tmaps);
-                }
-            }
-        }
     }
 
     public void remove(String address,long nonce){
@@ -59,6 +55,7 @@ public class NoncePool {
                 noncepool.remove(address);
             }
         }
+        String json = JSON.toJSONString(noncepool,true);
     }
 
     public long getMinNonce(String address){
@@ -77,16 +74,23 @@ public class NoncePool {
         return 0;
     }
 
-    public static void main(String args[]){
-        TreeMap<Integer,String> tree = new TreeMap<Integer,String>();
-        tree.put(1, "唐僧");
-        tree.put(2, "李白");
-        tree.put(5, "白居易");
-        tree.put(3, "孙悟空");
-        tree.put(2, "李黑");
-        tree.put(3, "李彤");
-        System.out.println(tree);
-        System.out.println("get(1):"+tree.get(1)+" get(2)"+tree.get(2));
-        System.out.println(tree.firstKey()+"--->"+tree.lastKey());
+    public TreeMap<Long, NonceState> getTreemap(String address){
+        if(noncepool.containsKey(address)){
+            return noncepool.get(address);
+        }
+        return new TreeMap<>();
     }
+
+//    public static void main(String args[]){
+//        TreeMap<Integer,String> tree = new TreeMap<Integer,String>();
+//        tree.put(1, "唐僧");
+//        tree.put(2, "李白");
+//        tree.put(5, "白居易");
+//        tree.put(3, "孙悟空");
+//        tree.put(2, "李黑");
+//        tree.put(3, "李彤");
+//        System.out.println(tree);
+//        System.out.println("get(1):"+tree.get(1)+" get(2)"+tree.get(2));
+//        System.out.println(tree.firstKey()+"--->"+tree.lastKey());
+//    }
 }

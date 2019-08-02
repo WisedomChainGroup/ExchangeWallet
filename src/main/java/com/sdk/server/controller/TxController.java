@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.TreeMap;
 
 @RestController
 public class TxController {
@@ -37,29 +38,24 @@ public class TxController {
             JSONObject json = JSON.parseObject(jsonString);
             return json;
         }
-        //rpc获取nonce
-        JSONObject getnonoce=NodeController.getNonce(frompubhash);
-        int Code= (int) getnonoce.get("code");
-        if(Code==5000){
-            APIResult result = new APIResult();
-            result.setStatusCode(5000);
-            result.setMessage("Error");
-            String jsonString = JSON.toJSONString(result);
-            JSONObject json = JSON.parseObject(jsonString);
-            return json;
-        }
-        long dbnonce= (long) getnonoce.get("data");
-        dbnonce++;
-        long minnonce=noncePool.getMinNonce(address);
         long maxnonce=noncePool.getMaxNonce(address);
-        if(minnonce==0){
+        if(maxnonce==0){
+            //rpc获取nonce
+            JSONObject getnonoce=NodeController.getNonce(frompubhash);
+            int Code= (int) getnonoce.get("code");
+            if(Code==5000){
+                APIResult result = new APIResult();
+                result.setStatusCode(5000);
+                result.setMessage("Error");
+                String jsonString = JSON.toJSONString(result);
+                JSONObject json = JSON.parseObject(jsonString);
+                return json;
+            }
+            long dbnonce= (long) getnonoce.get("data");
             nownonce=dbnonce;
         }else{
-            if(dbnonce!=minnonce){
-                nownonce=dbnonce;
-            }else{
-                nownonce=maxnonce+1;
-            }
+            maxnonce++;
+            nownonce=maxnonce;
         }
         JSON data = TxUtility.ClientToTransferAccount(fromPubkey,toPubkeyHash,amount,prikey,nownonce);
         if (data == null){
@@ -77,4 +73,17 @@ public class TxController {
             return data;
         }
     }
+
+    @RequestMapping(value="/getNoncePool",method = RequestMethod.GET )
+    public Object getNoncePool(@RequestParam(value = "address", required = true) String address){
+        if(WalletUtility.verifyAddress(address)!=0){
+            APIResult result = new APIResult();
+            result.setStatusCode(5000);
+            result.setMessage("Address Error");
+            return result;
+        }
+        TreeMap<Long, NonceState> tree=noncePool.getTreemap(address);
+        return APIResult.newFailResult(2000,"SUCCESS",tree);
+    }
+
 }
