@@ -43,7 +43,7 @@ public class TxController {
         if(maxnonce==0){
             //rpc获取nonce
             JSONObject getnonoce=NodeController.getNonce(frompubhash);
-            int Code= (int) getnonoce.get("code");
+            int Code= getnonoce.getIntValue("code");
             if(Code==5000){
                 APIResult result = new APIResult();
                 result.setStatusCode(5000);
@@ -52,7 +52,7 @@ public class TxController {
                 JSONObject json = JSON.parseObject(jsonString);
                 return json;
             }
-            long dbnonce= (long) getnonoce.get("data");
+            long dbnonce= getnonoce.getLongValue("data");
             nownonce=dbnonce;
         }else{
             maxnonce++;

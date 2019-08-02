@@ -32,9 +32,9 @@ public class PoolTask {
             long firstkey=treeMap.firstKey();
             //rpc获取nonce
             JSONObject getnonoce=NodeController.getNonce(WalletUtility.addressToPubkeyHash(entry.getKey()));
-            int Codes= (int) getnonoce.get("code");
+            int Codes= getnonoce.getIntValue("code");
             if(Codes==2000){
-                long nownonce=(long) getnonoce.get("data");
+                long nownonce= getnonoce.getLongValue("data");
                 if(nownonce>=firstkey){
                     noncePool.remove(entry.getKey(),firstkey);
                     continue;
