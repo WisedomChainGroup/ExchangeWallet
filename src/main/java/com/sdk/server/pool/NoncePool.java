@@ -1,8 +1,11 @@
 package com.sdk.server.pool;
 
 import com.alibaba.fastjson.JSON;
+import com.sdk.server.Leveldb.Leveldb;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -10,11 +13,14 @@ import java.util.concurrent.ConcurrentHashMap;
 public class NoncePool {
 
     private ConcurrentHashMap<String, TreeMap<Long, NonceState>> noncepool;
+    private Leveldb leveldb;
 
-    public NoncePool() {
+    @Autowired
+    public NoncePool(Leveldb leveldb) {
+        this.leveldb=leveldb;
         try{
             //序列化获取
-            String dbdata=null;
+            String dbdata=leveldb.readFromSnapshot();
             if(dbdata!=null || !dbdata.equals("")){
                 noncepool= (ConcurrentHashMap<String, TreeMap<Long, NonceState>>) JSON.parse(dbdata);
             }else{
@@ -29,7 +35,7 @@ public class NoncePool {
         return noncepool;
     }
 
-    public void add(String address,NonceState nonceState){
+    public void add(String address,NonceState nonceState) throws IOException {
         if(noncepool.containsKey(address)){
             TreeMap<Long, NonceState> tmaps=noncepool.get(address);
             long nownonce=nonceState.getNonce();
@@ -42,10 +48,10 @@ public class NoncePool {
             noncepool.put(address,treemap);
         }
         String json = JSON.toJSONString(noncepool,true);
-
+        leveldb.addPoolDb(json);
     }
 
-    public void remove(String address,long nonce){
+    public void remove(String address,long nonce) throws IOException {
         if(noncepool.containsKey(address)){
             TreeMap<Long, NonceState> tmaps=noncepool.get(address);
             if(tmaps.containsKey(nonce)){
@@ -56,6 +62,7 @@ public class NoncePool {
             }
         }
         String json = JSON.toJSONString(noncepool,true);
+        leveldb.addPoolDb(json);
     }
 
     public long getMinNonce(String address){
