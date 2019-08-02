@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,11 +17,15 @@ import java.util.TreeMap;
 @Component
 public class PoolTask {
 
+    public NoncePool noncePool;
+
     @Autowired
-    NoncePool noncePool;
+    public PoolTask(NoncePool noncePool){
+        this.noncePool=noncePool;
+    }
 
     @Scheduled(fixedDelay = 30 * 1000)
-    public void task(){
+    public void task() throws IOException {
         Map<String, TreeMap<Long, NonceState>> noncepool=noncePool.getNoncepool();
         for(Map.Entry<String, TreeMap<Long, NonceState>> entry:noncepool.entrySet()){
             TreeMap<Long, NonceState> treeMap=entry.getValue();

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.TreeMap;
@@ -26,7 +27,7 @@ public class TxController {
     @RequestMapping(value="/ClientToTransferAccount",method = RequestMethod.POST )
     public JSON ClientToTransferAccount(@RequestParam(value = "fromPubkey", required = true) String fromPubkey,@RequestParam(value = "toPubkeyHash", required = true) String toPubkeyHash,
                                         @RequestParam(value = "amount", required = true) BigDecimal amount,@RequestParam(value = "prikey", required = true) String prikey
-                                        ) {
+                                        ) throws IOException {
         long nownonce=0;
         String frompubhash=WalletUtility.pubkeyStrToPubkeyHashStr(fromPubkey);
         String address=WalletUtility.pubkeyHashToAddress(frompubhash);

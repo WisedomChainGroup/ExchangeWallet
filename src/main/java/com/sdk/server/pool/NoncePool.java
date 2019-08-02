@@ -21,7 +21,7 @@ public class NoncePool {
         try{
             //序列化获取
             String dbdata=leveldb.readFromSnapshot();
-            if(dbdata!=null || !dbdata.equals("")){
+            if(dbdata!=null && !dbdata.equals("")){
                 noncepool= (ConcurrentHashMap<String, TreeMap<Long, NonceState>>) JSON.parse(dbdata);
             }else{
                 this.noncepool = new ConcurrentHashMap<>();
