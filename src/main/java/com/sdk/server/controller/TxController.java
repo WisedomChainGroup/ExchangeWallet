@@ -53,9 +53,8 @@ public class TxController {
                 return json;
             }
             long dbnonce= getnonoce.getLongValue("data");
-            nownonce=dbnonce+1;
+            nownonce=dbnonce;
         }else{
-            maxnonce++;
             nownonce=maxnonce;
         }
         JSON data = TxUtility.ClientToTransferAccount(fromPubkey,toPubkeyHash,amount,prikey,nownonce);
@@ -69,6 +68,7 @@ public class TxController {
         }else {
             ((JSONObject) data).put("statusCode",2000);
             String texhash= (String) ((JSONObject) data).get("data");
+            nownonce++;
             NonceState nonceState=new NonceState(texhash,nownonce,new Date().getTime());
             noncePool.add(address,nonceState);
             return data;
