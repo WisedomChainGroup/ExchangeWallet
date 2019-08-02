@@ -32,6 +32,8 @@ wallet_jar主要是提供普通转账事务的构造，签名，发送以。
 
 ##### 下载Release里最新的wallet_jar，运行server-0.0.1-SNAPSHOT.jar :
 ##### java -jar server-0.0.1-SNAPSHOT.jar --server.port="your port" --nodeNet="node ip";
+
+##### 例如：java -jar server-0.0.1-SNAPSHOT.jar --server.port=8080 --nodeNet=00.0.0.000:0000;
 ##### 所有的调用均为普通rpc
 ##### Content-Type: application/json;charset=UTF-8
 
@@ -52,3 +54,8 @@ wallet_jar主要是提供普通转账事务的构造，签名，发送以。
 * }
 ```
 * 注意，这里的成功或者失败，仅仅是指动作本身，真正看事务有没有最终成功，还需要通过事务哈希查询确认区块数
+
+	
+
+
+
