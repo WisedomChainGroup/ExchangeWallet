@@ -25,6 +25,11 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web:2.1.6.RELEASE'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     compile fileTree(dir:'lib',includes:['*jar'])
+    // https://mvnrepository.com/artifact/org.iq80.leveldb/leveldb
+    compile group: 'org.iq80.leveldb', name: 'leveldb', version: '0.7'
+    // https://mvnrepository.com/artifact/org.iq80.leveldb/leveldb-api
+    compile group: 'org.iq80.leveldb', name: 'leveldb-api', version: '0.7'
+    
 }
 
 task copyDependencies(type: Copy) {
