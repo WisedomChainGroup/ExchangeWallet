@@ -53,7 +53,7 @@ public class TxController {
                 return json;
             }
             long dbnonce= getnonoce.getLongValue("data");
-            nownonce=dbnonce;
+            nownonce=dbnonce+1;
         }else{
             maxnonce++;
             nownonce=maxnonce;
