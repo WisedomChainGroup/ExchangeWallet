@@ -37,21 +37,118 @@ wallet_jar主要是提供普通转账事务的构造，签名，发送以。
 ##### 所有的调用均为普通rpc
 ##### Content-Type: application/json;charset=UTF-8
 
-1.0 发起转账申请
+#### 1.0 生成keystore文件
 ```
-* ClientToTransferAccount(POST)
-* 参数：
-* 1）、fromPubkey(十六进制字符串)
-* 2）、toPubkeyHash(十六进制字符串)
-* 3）、amount（BigDecimal)
-* 4）、prikey（十六进制字符串)
-* 返回类型：Json
-* 返回值：
-* {
-* data :txHash(事务哈希，十六进制字符串)
-* (int)statusCode:int
-* (String)message:traninfo（已签名事务，十六进制字符串)
-* }
+ fromPassword(GET)
+ 参数：
+ 1）、password(String)
+ 返回类型：json
+ 返回值：
+ {"message":"","data":[],"statusCode":int}
+ data：keystore
+```
+
+#### 1.1 地址校验
+```
+ verifyAddress(GET)
+ 参数：
+ 1）、address(String)
+ 返回类型：json
+ 返回值：
+ {"message":"","data":[],"statusCode":int}
+```
+#### 1.2 通过地址获得公钥哈希(调用此方法之前请先校验地址合法性！(调用verifyAddress方法))
+```
+ addressToPubkeyHash(GET)
+ 参数：
+ 1）、address(String)
+ 返回类型：json
+ 返回值：
+ {"message":"","data":[],"statusCode":int}
+ data：pubkeyHash（十六进制字符串）
+```
+#### 1.3 通过公钥哈希获得地址
+```
+ pubkeyHashToAddress(GET)
+ 参数：
+ 1）、pubkeyHash(String)
+ 返回类型：json
+ 返回值：
+ {"message":"","data":[],"statusCode":int}
+ data：pubkeyHash(十六进制字符串)
+```
+#### 1.4 通过keystore获得地址
+```
+ keystoreToAddress(POST)
+ 参数：
+ 1）、keystoreJson(String)
+ 2）、password(String)
+ 返回类型：json
+ 返回值：
+ {"message":"","data":[],"statusCode":int}
+ data：address(String)
+```
+#### 1.5 通过keystore获得公钥哈希
+```
+ keystoreToPubkeyHash()
+ 参数：
+ 1)、keystoreJson(String)
+ 2)、password(String)
+ 返回类型：json
+ 返回值：
+ {"message":"","data":[],"statusCode":int}
+ data：pubkeyHash(十六进制字符串)
+```
+#### 1.6 通过keystore获得私钥
+```
+ obtainPrikey(POST)
+ 参数：
+ 1)、keystoreJson(String)
+ 2)、password(String)
+ 返回类型：json
+ 返回值：
+ {"message":"","data":[],"statusCode":int}
+ data：privateKey(十六进制字符串)
+```
+#### 1.7 通过keystore获得公钥
+```
+ keystoreToPubkey(POST)
+ 参数：
+ 1)、keystoreJson(String)
+ 2)、password(String)
+ 返回类型：json
+ 返回值：
+ {"message":"","data":[],"statusCode":int}
+ data：pubkey(十六进制字符串)
+```
+#### 1.8 修改KeyStore密码方法
+```
+ modifyPassword(POST)
+ 参数：
+ 1)、keystoreJson(String)
+ 2）、password(String)
+ 3）、newPassword(String)
+ 返回类型：json
+ 返回值：
+ {"message":"","data":[],"statusCode":int}
+ data：keystore(json)
+```
+#### 1.9 发起转账申请
+```
+ ClientToTransferAccount(POST)
+ 参数：
+ 1）、fromPubkey(十六进制字符串)
+ 2）、toPubkeyHash(十六进制字符串)
+ 3）、amount（BigDecimal)
+ 4）、prikey（十六进制字符串)
+ 5）、nonce(Long)
+ 返回类型：Json
+ 返回值：
+ {
+ data :txHash(事务哈希，十六进制字符串)
+ (int)statusCode:int
+ (String)message:traninfo（已签名事务，十六进制字符串)
+ }
 ```
 * 注意，这里的成功或者失败，仅仅是指动作本身，真正看事务有没有最终成功，还需要通过事务哈希查询确认区块数
 
