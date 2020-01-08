@@ -72,6 +72,9 @@ wallet_jar主要是提供普通转账事务的构造，签名，发送以。
  pubkeyHashToAddress(GET)
  参数：
  1）、pubkeyHash(String)
+ 2) 、type(int)
+ 	type: 1 不加前缀的老格式地址
+	      2  加上“WX”前缀的新格式地址
  返回类型：json
  返回值：
  {"message":"","data":[],"statusCode":int}
