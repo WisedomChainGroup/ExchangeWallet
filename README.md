@@ -31,7 +31,7 @@ wallet_jar主要是提供普通转账事务的构造，签名，发送以。
 ## 二、 wallet_jar文档
 
 ##### 下载Release里最新的wallet_jar，运行server-0.2.0-SNAPSHOT.jar :
-##### java -jar server-0.2.0-SNAPSHOT.jar --server.port="your port" --nodeNet="node ip";
+##### java -jar server-0.2.0-SNAPSHOT.jar --server.port="your port" --nodeNet="node ip:port";
 
 ##### 例如：java -jar server-0.2.0-SNAPSHOT.jar --server.port=8080 --nodeNet=00.0.0.000:0000;
 ##### 所有的调用均为普通rpc
