@@ -144,7 +144,6 @@ wallet_jar主要是提供普通转账事务的构造，签名，发送。
  2）、toPubkeyHash(十六进制字符串)
  3）、amount（BigDecimal)
  4）、prikey（十六进制字符串)
- 5）、nonce(Long)
  返回类型：Json
  返回值：
  {
