@@ -28,22 +28,22 @@ public class WalletController {
         return json;
     }
 
-    @RequestMapping(value="/modifyPassword",method = RequestMethod.POST )
-    public JSON modifyPassword(@RequestParam(value = "keystoreJson", required = true) String keystoreJson,@RequestParam(value = "password", required = true) String password,@RequestParam(value = "newPassword", required = true) String newPassword) {
-        JSON keystore = WalletUtility.modifyPassword(keystoreJson,password,newPassword);
-        APIResult result = new APIResult();
-        if(keystore == null){
-            result.setStatusCode(5000);
-            result.setMessage("Error");
-        }else{
-            result.setStatusCode(2000);
-            result.setMessage("SUCCESS");
-            result.setData(keystore);
-        }
-        String jsonString = JSON.toJSONString(result);
-        JSONObject json = JSON.parseObject(jsonString);
-        return json;
-    }
+//    @RequestMapping(value="/modifyPassword",method = RequestMethod.POST )
+//    public JSON modifyPassword(@RequestParam(value = "keystoreJson", required = true) String keystoreJson,@RequestParam(value = "password", required = true) String password,@RequestParam(value = "newPassword", required = true) String newPassword) {
+//        JSON keystore = WalletUtility.modifyPassword(keystoreJson,password,newPassword);
+//        APIResult result = new APIResult();
+//        if(keystore == null){
+//            result.setStatusCode(5000);
+//            result.setMessage("Error");
+//        }else{
+//            result.setStatusCode(2000);
+//            result.setMessage("SUCCESS");
+//            result.setData(keystore);
+//        }
+//        String jsonString = JSON.toJSONString(result);
+//        JSONObject json = JSON.parseObject(jsonString);
+//        return json;
+//    }
 
     @RequestMapping(value="/verifyAddress",method = RequestMethod.GET )
     public JSON verifyAddress(@RequestParam(value = "address", required = true) String address) {
@@ -68,8 +68,8 @@ public class WalletController {
 
 
     @RequestMapping(value="/pubkeyHashToAddress",method = RequestMethod.GET )
-    public JSON pubkeyHashToAddress(@RequestParam(value = "pubkeyHash", required = true) String pubkeyHash) {
-        String address = WalletUtility.pubkeyHashToAddress(pubkeyHash);
+    public JSON pubkeyHashToAddress(@RequestParam(value = "pubkeyHash", required = true) String pubkeyHash,@RequestParam(value = "type", required = true) int type) {
+        String address = WalletUtility.pubkeyHashToAddress(pubkeyHash,type);
         APIResult result = new APIResult();
         if(address == null || address == ""){
             result.setStatusCode(5000);
