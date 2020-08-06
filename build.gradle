@@ -1,9 +1,10 @@
-/*
+
 plugins {
     id 'org.springframework.boot' version '2.1.6.RELEASE'
     id 'java'
 }
-*/
+
+
 //apply plugin: 'io.spring.dependency-management'
 apply plugin: 'application'
 
@@ -31,12 +32,12 @@ allprojects {
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web:2.1.6.RELEASE'
     compile 'org.springframework.boot:spring-boot-starter-test:2.1.6.RELEASE'
-    compile fileTree(dir:'lib',includes:['*jar'])
+    compile fileTree(dir:'libs',includes:['*jar'])
     // https://mvnrepository.com/artifact/org.iq80.leveldb/leveldb
     compile group: 'org.iq80.leveldb', name: 'leveldb', version: '0.7'
     // https://mvnrepository.com/artifact/org.iq80.leveldb/leveldb-api
     compile group: 'org.iq80.leveldb', name: 'leveldb-api', version: '0.7'
-    implementation 'com.github.WisedomChainGroup:java-sdk:0.3.1'
+    compile 'com.github.WisedomChainGroup:java-sdk:0.3.1'
 
     // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on
     compile "org.bouncycastle:bcprov-jdk15on:1.61"
@@ -64,7 +65,7 @@ dependencies {
     compile group: 'com.nativelibs4java', name: 'ochafik-util', version: '0.12'
     //     https://mvnrepository.com/artifact/javax.validation/validation-api
     compile group: 'javax.validation', name: 'validation-api', version: '2.0.0.Final'
-    implementation 'com.github.TrustedDataFramework:java-rlp:1.1.20'
+    compile 'com.github.TrustedDataFramework:java-rlp:1.1.20'
 
 
 }
@@ -90,4 +91,8 @@ task fatJar(type: Jar) {
     }
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
+}
+
+bootJar {
+    version = '1.0.0'
 }
